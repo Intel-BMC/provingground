@@ -420,6 +420,7 @@ uint8_t MDR_V1::regionLock(uint8_t u8SessionId, uint8_t regionId,
     regionS[regionId].sessionId = reqSession;
     regionS[regionId].state.lockPolicy = u8LockPolicy;
     regionS[regionId].state.regionUsed = 0;
+    memset(regionS[regionId].regionData, 0, regionS[regionId].state.regionLength);
     regionS[regionId].msTimeout = msTimeout;
     regionUsed(regionS[regionId].state.regionUsed);
     lockPolicy(regionS[regionId].state.lockPolicy);
